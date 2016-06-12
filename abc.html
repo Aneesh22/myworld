@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-  
+<body onload ="image()"> 
   <Style>
   
 #image {
@@ -8,12 +8,12 @@
     height:100px;
 }
 #BackButton {
-    visibility:hidden;
+
 	margin-left: 100px;
 	
 	}
 #forwardButton {
-    visibility:hidden;
+
 	margin-left: 50px;
 }
   </Style>
@@ -27,13 +27,11 @@
 
     </div>
 	
-
-    <h2>Available for iPhone and Android.</h2>
     <div id="footer" style='align:inline';>
       <div id="thumbnails" style="display: inline-block;">
 	   <ul class="thumbnails_list" id="thumbnails_list" style="list-style-type:none">
         <li><img src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\1.jpg" height= "100px" width="60px" onclick="image(this)"/></li>
-        <li><img src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\2.jpg" height= "100px" width="60px" onclick="image(this)"/></li>
+        <li><img src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\2.jpg" height= "100px" width="40px" onclick="image(this)"/></li>
 		<li><img src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\3.jpg" height= "100px" width="60px" onclick="image(this)"/></li>
 		<li><img src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\5.jpg" height= "100px" width="60px" onclick="image(this)"/></li>
 		<li><img src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\4.jpg" height= "100px" width="60px" onclick="image(this)"/></li>
@@ -53,28 +51,23 @@
  var src;
  var num;
  var allImages={};
- var CountForward=0;
- var CountBackward=0;
 function image(img) {
 
-    CountForward=0;
-	CountBackward=0;
     allImages = document.getElementById("thumbnails").getElementsByTagName("img");
 	num=allImages.length;
-	
-	//alert(num);
-	//for(i=0;i<num;i++)
-	//{
-	//alert("hello");
-	//document.getElementById('image').innerHTML = '<img src='+allImages[i].src+' height= "500px" width="250px"/>';
-	
-	//}
-	
-    src = img.src;
-	//alert(src);
-   document.getElementById('image').innerHTML = '<img src='+src+' height= "500px" width="250px"/>';
-   document.getElementById('BackButton').style.visibility= 'visible'
-   document.getElementById('forwardButton').style.visibility= 'visible'
+	//alert(img);	
+	if(img === undefined)
+	{
+      document.getElementById('image').innerHTML = '<img src='+allImages[0].src+' height= "500px" width="250px"/>';
+	  src = allImages[0].src;
+	}	
+    else
+	{ 
+		src = img.src;
+		document.getElementById('image').innerHTML = '<img src='+src+' height= "500px" width="250px"/>';
+		document.getElementById('BackButton').style.visibility= 'visible'
+		document.getElementById('forwardButton').style.visibility= 'visible'
+	}
 }
 
 function next()
