@@ -79,7 +79,7 @@ function image(img) {
 
 function next()
 {
-    //alert(CountForward);
+
 	var count=0;
 	for (i=0;i<num;i++)
 	{
@@ -88,34 +88,29 @@ function next()
 		if(src === allImages[i].src )
 			{break;}
 	}
-	count=count+CountForward;
 	if(count >=5)
 	{count=4;}
 	src=allImages[count].src;
 	
-    document.getElementById('image').innerHTML = '<img src='+src+' height= "500px" width="250px"/>';
-	CountForward++;
-	
+    document.getElementById('image').innerHTML = '<img src='+src+' height= "500px" width="250px"/>';	
 }
 
 function back()
 {
-    alert(CountBackward);
+    //alert(CountBackward);
 	var count=0;
 	for (i=0;i<num;i++)
 	{
 		//alert (count);
-		
 		if(src === allImages[i].src )
 			{break;}
 	 count++;
 	}
-	count=count-1;
-	count=count-CountBackward;
-	if(count <0)
-	{count=0;}
-    document.getElementById('image').innerHTML = '<img src='+allImages[count].src+' height= "500px" width="250px"/>';
-	CountBackward++;
+	if(count === 0)
+	{count=1;}
+	src=allImages[count-1].src;
+	
+    document.getElementById('image').innerHTML = '<img src='+src+' height= "500px" width="250px"/>';
 	
 }
   </Script>
