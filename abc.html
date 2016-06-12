@@ -16,6 +16,7 @@
 
 	margin-left: 50px;
 }
+
   </Style>
     <div class="header">
       <div class="container">
@@ -30,11 +31,11 @@
     <div id="footer" style='align:inline';>
       <div id="thumbnails" style="display: inline-block;">
 	   <ul class="thumbnails_list" id="thumbnails_list" style="list-style-type:none">
-        <li><img src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\1.jpg" height= "100px" width="60px" onclick="image(this)"/></li>
-        <li><img src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\2.jpg" height= "100px" width="40px" onclick="image(this)"/></li>
-		<li><img src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\3.jpg" height= "100px" width="60px" onclick="image(this)"/></li>
-		<li><img src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\5.jpg" height= "100px" width="60px" onclick="image(this)"/></li>
-		<li><img src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\4.jpg" height= "100px" width="60px" onclick="image(this)"/></li>
+        <li><img id ="border1" src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\1.jpg" height= "100px" width="60px" onmouseover="image(this)"/></li>
+        <li><img id ="border2" src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\2.jpg" height= "100px" width="40px" onmouseover="image(this)"/></li>
+		<li><img id ="border3" src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\3.jpg" height= "100px" width="60px" onmouseover="image(this)"/></li>
+		<li><img id ="border4" src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\5.jpg" height= "100px" width="60px" onmouseover="image(this)"/></li>
+		<li><img id ="border5" src="C:\Users\aneesh goel\Documents\My Projects\myworld\Images\4.jpg" height= "100px" width="60px" onmouseover="image(this)"/></li>
 	   </ul>
 	  </div>
 	  <div id='BackButton' style="display:inline-block;">
@@ -60,6 +61,7 @@ function image(img) {
 	{
       document.getElementById('image').innerHTML = '<img src='+allImages[0].src+' height= "500px" width="250px"/>';
 	  src = allImages[0].src;
+	  document.getElementById('border'+[1]).style.border='1px red solid';
 	}	
     else
 	{ 
@@ -84,7 +86,7 @@ function next()
 	if(count >=5)
 	{count=4;}
 	src=allImages[count].src;
-	
+	document.getElementById('border'+[count+1]).style.border='1px red solid';
     document.getElementById('image').innerHTML = '<img src='+src+' height= "500px" width="250px"/>';	
 }
 
